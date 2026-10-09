@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sporty Hero Drop Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="side-panel">
+        <div class="brand-wrap">
+          <p class="eyebrow">SPORTY HERO</p>
+          <h1>Drop tracker</h1>
+        </div>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>To-do list</h2>
+            <span id="todoBadge" class="badge">0 tasks</span>
+          </div>
+
+          <form id="todoForm" class="todo-form">
+            <input id="todoInput" type="text" placeholder="Add a drop reminder..." maxlength="120" />
+            <button type="submit">Add</button>
+          </form>
+
+          <ul id="todoList" class="todo-list"></ul>
+        </section>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow muted">Next releases</p>
+            <h2>Upcoming sports drops</h2>
+          </div>
+          <button id="clearAllBtn" class="ghost-button" type="button">Clear all</button>
+        </header>
+
+        <section class="filters-bar">
+          <div class="search-box">
+            <span>Search</span>
+            <input id="searchInput" type="text" placeholder="Search drops or sport" />
+          </div>
+
+          <div class="filter-group">
+            <label>
+              <span>Sport</span>
+              <select id="sportFilter">
+                <option value="all">All sports</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Status</span>
+              <select id="statusFilter">
+                <option value="all">All statuses</option>
+                <option value="Dropping soon">Dropping soon</option>
+                <option value="Pre-order">Pre-order</option>
+                <option value="New arrival">New arrival</option>
+                <option value="Exclusive">Exclusive</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="stats-row" id="statsRow"></section>
+
+        <section id="dropGrid" class="drop-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
